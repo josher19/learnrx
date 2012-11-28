@@ -4026,10 +4026,12 @@ function(sprite, spriteContainer) {
     <p>Let's see if you can adjust the coordinates in the mouse drag event, based on the mousedown location on the sprite. The mouse events are sequences, and they look something like this:</p>
 <pre>
     spriteContainerMouseMoves =
-        seq([ {x: 200, y: 400, offsetX: 10, offsetY: 15},,,{x: 210, y: 410, offsetX: 20, offsetY: 26},,, ])
+        seq([ 
+          {pageX: 200, pageY: 400, offsetX: 10, offsetY: 15},,,
+          {pageX: 210, pageY: 410, offsetX: 20, offsetY: 26},,, ])
 </pre>
 <p>
-    Each item in the mouse event sequences contains an x, y value that represents that absolute location of the mouse event on the page. The moveSprite() function uses these coordinates to position the sprite. Each item in the sequence <i>also</i> contains a pair of offsetX and offsetY properties that indicate the position of the mouse event relative to the event target.</p>
+    Each item in the mouse event sequences contains an pageX, pageY value that represents that absolute location of the mouse event on the page. The moveSprite() function uses these coordinates to position the sprite. Each item in the sequence <i>also</i> contains a pair of offsetX and offsetY properties that indicate the position of the mouse event relative to the event target.</p>
 
     <textarea class="code" rows="60" cols="80">
 function(sprite, spriteContainer) {
